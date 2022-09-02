@@ -1,12 +1,9 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
-  title: 'Moudio',
+module.exports = {
+
+  title: 'MouDio',
   tagline: 'Bluetooth Speaker',
   url: 'https://github.com',
   baseUrl: '/Moudio-docs/',
@@ -14,119 +11,153 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Mala2', // Usually your GitHub org/user name.
   projectName: 'Moudio-docs', // Usually your repo name.
   deploymentBranch: 'gh-pages',
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
-
-  presets: [
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      }),
-    ],
+  
+  scripts: [
+    'https://www.instagram.com/embed.js'
   ],
-
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+  themeConfig: {
+    navbar: {
+      title: 'MouDio',
+      logo: {
+        alt: 'Moudio by Mo',
+        src: 'img/sqfmi_logo_32x32.svg',
+      },
+      items: [
+        {
+          to: 'docs/getting-started',
+          activeBasePath: 'docs',
+          label: 'Docs',
+          position: 'left',
         },
-        items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
+        {
+          to: 'watchfaces',
+          activeBasePath: 'watchfaces',
+          label: 'Watch Faces',
+          position: 'left',
+        },
+        {
+          to: 'watchcases',
+          activeBasePath: 'watchcases',
+          label: 'Watch Cases',
+          position: 'left',
+        },
+        {
+          to: 'gallery',
+          activeBasePath: 'gallery',
+          label: 'Gallery',
+          position: 'left',
+        },
+        // {
+        //   to: 'contest',
+        //   activeBasePath: 'contest',
+        //   label: 'Case Design Contest',
+        //   position: 'left',
+        // },                                   
+        // {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          href: 'https://www.mouser.com/manufacturer/sqfmi/',
+          label: 'Buy Watchy!',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Getting Started',
+              to: 'docs/getting-started',
+            },
+            // {
+            //   label: 'Hardware',
+            //   to: 'docs/hardware',
+            // },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/sqfmi/',
+            },                        
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Discord',
+              to: 'https://discord.gg/ZXDegGV8E7',
+            },                       
+          ],
+        },        
+        {
+          title: 'Social',
+          items: [
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/sqfmi',
+            },
+            {
+              label: 'Instagram',
+              href: 'https://www.instagram.com/sqfmi',
+            },
+            {
+              label: 'YouTube',
+              href: 'https://www.youtube.com/channel/UC9SAc8ikvU7KuYw3OfogFFA',
+            },
+          ],
+        },
+        {
+          title: 'Shop',
+          items: [
+            {
+              label: 'SQFMI Shop',
+              href: 'https://shop.sqfmi.com',
+            },
+            {
+              label: 'Mouser',
+              href: 'https://www.mouser.com/manufacturer/sqfmi/',        
+            },
+            {
+              label: 'Crowd Supply',
+              href: 'https://www.crowdsupply.com/sqfmi/watchy',        
+            },
+          ],
+        },        
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} <a class="footer__link-item" href="https://www.sqfmi.com"> Squarofumi</a>. Built with Docusaurus.`,
+    },
+     
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-    }),
-};
+ },
+    },
 
-module.exports = config;
+  
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          // Please change this to your repo.
+          editUrl:
+            'https://github.com/sqfmi/watchy-docs/edit/main/',
+        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   editUrl:
+        //     'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+        // },
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      },
+    ],
+  ],
+};
