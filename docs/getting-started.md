@@ -5,7 +5,7 @@ sidebar_label: Getting Started
 slug: /getting-started
 ---
 
-## Watchy Kit w/ Case Assembly
+## Watchy Kit w/ Case Assembly test1
 ![Watchy Kit with Case](../static/img/watchy_kit_instructions.png)
 
 **Before You Begin** make sure you review the instructions and inspect for any missing or damaged components.
