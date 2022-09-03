@@ -1,6 +1,6 @@
 ---
-id: create-watchface
-title: Create Your Own Watch Face
+id: create-DSP
+title: Create Your Own Own Digital Signal Processing (DSP)
 sidebar_label: Create Your Own Watch Face
 slug: /create-watchface
 ---
