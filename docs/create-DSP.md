@@ -1,7 +1,7 @@
 ---
 id: create-DSP
 title: Create Your Own Own Digital Signal Processing (DSP)
-sidebar_label: Create Your Own Digital Signal Processing
+sidebar_label: Create Your Own DSP
 slug: /create-watchface
 ---
 
