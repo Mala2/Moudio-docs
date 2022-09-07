@@ -2,7 +2,7 @@
 id: create-DSP
 title: Create Your Own Own Digital Signal Processing (DSP)
 sidebar_label: Create Your Own DSP
-slug: /create-watchface
+slug: /create-DSP
 ---
 
 The Watchy library makes it easy to create your own custom watch face, we've provided a few examples that all use the same template.
