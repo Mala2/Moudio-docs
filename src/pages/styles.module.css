@@ -11,16 +11,18 @@
   position: relative;
   overflow: hidden;
   background-image: url("/img/watchy_render.png");
-  background-size: 700px;
+  background-size: 590px;
   background-position: 35% 0px;
   background-repeat: no-repeat;
-  background-color: #2b2b2b;
-  height:500px;
+  background-color: #dbe6fd; /*//ffd700*/
+  height: 400px;
 }
 
-.heroBanner h1, .heroBanner p, .heroBanner a{
-  margin-left:35%;
-  color: #d7e2d3 !important;  
+.heroBanner h1,
+.heroBanner p,
+.heroBanner a {
+  margin-left: 45%;
+  color: #000000 !important;
 }
 
 @media screen and (max-width: 966px) {
@@ -31,11 +33,12 @@
     background-position: 15% 5%;
   }
 
-  .heroBanner h1, .heroBanner p, .heroBanner a{
-    margin-left:0%;
-    color: #d7e2d3 !important;  
+  .heroBanner h1,
+  .heroBanner p,
+  .heroBanner a {
+    margin-left: 0%;
+    color: #d7e2d3 !important;
   }
-  
 }
 
 .buttons {

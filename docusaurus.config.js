@@ -10,7 +10,7 @@ module.exports = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
-  organizationName: "Mala2", // Usually your GitHub org/user name.
+  organizationName: "Mala2", // Usually your GitHub org/user name. :)
   projectName: "Moudio-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
 
@@ -20,7 +20,7 @@ module.exports = {
       title: "MouDio",
       logo: {
         alt: "Moudio by Mo",
-        src: "img/sqfmi_logo_32x32.svg",
+        src: 'img/sqfmi_logo_32x32.svg',
       },
       items: [
         {
@@ -30,15 +30,15 @@ module.exports = {
           position: "left",
         },
         {
-          to: "watchfaces",
-          activeBasePath: "watchfaces",
-          label: "Watch Faces",
+          to: "speakerfaces",
+          activeBasePath: "speakerfaces",
+          label: "Speaker Faces",
           position: "left",
         },
         {
-          to: "watchcases",
-          activeBasePath: "watchcases",
-          label: "Watch Cases",
+          to: "speakercases",
+          activeBasePath: "speakercases",
+          label: "Speaker Cases",
           position: "left",
         },
         {
@@ -99,21 +99,13 @@ module.exports = {
             },
             {
               label: "Instagram",
-              href: "https://www.instagram.com",
-            },
-            {
-              label: "YouTube",
-              href: "https://www.youtube.com",
+              href: "https://www.instagram.com/",
             },
           ],
         },
         {
           title: "Shop",
           items: [
-            {
-              label: "Shop",
-              href: "https://www.mouser.com",
-            },
             {
               label: "Mouser",
               href: "https://www.mouser.com",

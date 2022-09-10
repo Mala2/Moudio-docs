@@ -1,18 +1,26 @@
 module.exports = {
   docs: [
+
     {
+      type: 'doc',
+      id: 'Overview'
+    },
+    
+    
+        {
       type: 'category',
       label: 'Software',
       items: ['getting-started', 'libs', 'examples','create-DSP','battery-life'],
       collapsed: false
     },
+    
+    
+    
     {
-      type: 'doc',
-      id: 'hardware'
-    },
-    {
-      type: 'doc',
-      id: '3DModels'
+      type: 'category',
+      label: 'Hardware',
+      items: ['Schematics', '3DModels', 'Fabrication'],
+      collapsed: false
     },    
     {
       type: 'doc',
