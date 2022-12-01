@@ -71,10 +71,10 @@ module.exports = {
               label: "Getting Started",
               to: "docs/getting-started",
             },
-            // {
-            //   label: 'Hardware',
-            //   to: 'docs/hardware',
-            // },
+            {
+              label: 'Hardware',
+              to: 'docs/hardware',
+            },
             {
               label: "GitHub",
               href: "https://github.com/Mala2/Moudio",
@@ -103,19 +103,7 @@ module.exports = {
             },
           ],
         },
-        {
-          title: "Shop",
-          items: [
-            {
-              label: "Mouser",
-              href: "https://www.mouser.com",
-            },
-            {
-              label: "Crowd Supply",
-              href: "https://www.crowdsupply.com",
-            },
-          ],
-        },
+        
       ],
       copyright: `Copyright © ${new Date().getFullYear()} <a class="footer__link-item" href="https://github.com/Mala2"> Mohammad Alabdulaziz</a>. Built with Docusaurus.`,
     },
