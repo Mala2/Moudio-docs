@@ -44,7 +44,7 @@ slug: /hardware
 
 ## Bill of Materials
 
-<iframe src="/interactive_bom/watchy_interactive_bom.html" width="100%" height="600" title="Watchy Interactive BOM" ></iframe>
+<iframe src="/360/360.html" width="100%" height="600" title="Watchy Interactive BOM" ></iframe>
 
 
 [Open Interactive BOM in new tab](https://watchy.sqfmi.com/interactive_bom/watchy_interactive_bom.html)
