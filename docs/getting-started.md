@@ -4,62 +4,7 @@ title: Getting Started
 sidebar_label: Getting Started
 slug: /getting-started
 ---
-
-## Watchy Kit w/ Case Assembly 
-![Watchy Kit with Case](../static/img/watchy_kit_instructions.png)
-
-<iframe src="/360/360.html" width="100%" height="600" title="Watchy Interactive BOM" ></iframe>
-
-**Before You Begin** make sure you review the instructions and inspect for any missing or damaged components.
-
-**Remove The Components Carefully** as they are tightly packed for maximum protection. The display is made of glass and will crack if you bend it!
-
-**Test Your PCB** to make sure the board is functional!
-
-**Do Not Apply The Included Tape!!** Watchy can be assembled and secured with the included enclosure, without needing any tape. Only apply the tape if you intend to use Watchy without the enclosure, and have triple checked the screen is properly aligned.
-
-1. Connect the screen to the FPC connector, the shiny gold pins on the ribbon cable should be facing up. The ribbon cable goes through the PCB slot like in the image above.
-2. Connect the battery
-3. Connect the USB to start charging the battery
-4. Press [SW1](/docs/hardware#bill-of-materials) to bring up the **menu**/**confirm**
-5. Press [SW3](/docs/hardware#bill-of-materials) & [SW4](/docs/hardware#bill-of-materials) to navigate **up**/**down**
-6. Press [SW2](/docs/hardware#bill-of-materials) to **exit/cancel**
-
-![Watchy Buttons](../static/img/watchy_buttons_map.png)
-
-7. Wait 1 minute to check and see if the clock is updating the time correctly
-
-**Tips**
-
-- **Make sure the screen is perfectly aligned before taping it down!** It should not extend above or below the strap holes on the PCB.
-
-![Watchy Screen Alignment](../static/img/watchy_screen_align.png)
-
-- **Make sure the battery cable is tucked in** Everything should fit snug and be aligned to the bottom case, before securing the top case.
-- **Do NOT force the case to close. It could break the screen & buttons!** The case should close easily with the top and bottom snaps latching.
-- **Do NOT overtighten the screws in the aluminum case** Overtightening will crack the screen! Make sure everything fits nicely and slowly adjust the screws to secure the case.
-- **Still having trouble?** Check out this step-by-step guide on assembling the case in our [FAQ](/docs/faqs#the-case-doesnt-fitclose-how-do-i-assemble-it)
-
-Assembly Video: https://www.youtube.com/watch?v=ftLTrr_HTpI
-
-Assembly Video (CNC Aluminum Case): https://www.youtube.com/watch?v=rbVr9eVb72M
-
-## Watchy Original Assembly
-![Watchy OG Assembly](../static/img/watchy_assembly_steps.png)
-
-1. Apply tape to the **back** of the E-Paper display and battery. The **front of the display is white** and the **back of the display is metallic/silver**
-2. Pull lightly to unlock the FFC connector, insert the display cable through the strap hole. Make sure the cable is inserted all the way, then push the lock back in to secure the cable. 
-3. Fold back and align the display to the top of the PCB, peel off the tape and firmly secure the display
-4. Insert the battery plug, ensure correct polarity (red is closer to the USB connector)
-5. Peel off the tape and firmly secure the battery to the PCB
-6. Insert the watch strap through the PCB strap holes, then tighten the strap from both ends
-7. Wrap the strap around your arm and adjust for comfort
-
-Assembly video: https://www.youtube.com/watch?v=PCPxTS1aF3w
-
 ## Arduino Setup
-
-Watchy comes pre-loaded with firmware that demonstrates all the basic features. You can also try different watch faces and examples in Arduino.
 
 1. Download and install the latest <ins>[Arduino IDE](https://www.arduino.cc/en/software)</ins>
 2. Start Arduino and open the *Preferences* window.
@@ -74,7 +19,7 @@ Watchy comes pre-loaded with firmware that demonstrates all the basic features. 
 
 ### Upload
 
-1. Plug in the USB on Watchy and select the serial port that shows up
+1. Plug in the USB on Moudio and select the serial port that shows up
 2. If nothing shows up, or if you're having trouble uploading, make sure you have the <ins>[USB-Serial drivers](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)</ins> installed.
 2. Select **ESP32 Dev Module** under Tools > Board > ESP32 Arduino
 3. Select **Huge App** under Tools > Partition Scheme
