@@ -1,8 +1,7 @@
 ---
 sidebar_position: 1
 ---
-
-# Overview
+![Moudio Speaker](../static/img/Moudio_Front.png)
 
 A fully functional Bluetooth Speaker implements most of the modern features. The goal is to have a High-performance portable Bluetooth speaker with a modern design.
 
@@ -10,7 +9,7 @@ In this speaker, I tried combining all modern features to have pure sound and th
 
 So far, I have built and tested PCBs as prototypes, which work as expected. The hardware design is mainly done. However, the software part is still under process; and this is where I need most of the help. Please refer to the shared files for more information.
 
-# Features
+## Features
 	
 * **Amplifier** - 2x  Texas Instruments® [*TAS5825M*](https://www.ti.com/product/TAS5825M) Which has low distortion can output 2x 30 W, 2.2 Mode (8-Ω, 24 V, THD+N=1%)
 * **Connectivity** - The [*FSC-BT806 Feasycom*](https://github.com/Mala2/FSC-BT806) features
@@ -21,8 +20,7 @@ So far, I have built and tested PCBs as prototypes, which work as expected. The 
 * **Arduino IDE Programmable Bluetooth-Speaker**
 
 
-# Block Diagram
+## Block Diagram
 
 The following displays the latest Block Diagram; Things may change, and probably there may be some discrepancy between the schematic and the block diagram.
 
-![lock Diagram](../static/img/BD.png)

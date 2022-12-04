@@ -5,7 +5,6 @@ sidebar_label: 3D Models
 slug: /3D
 ---
 
-![Watchy STEP Render](../static/img/Watchy_STEP_Render.png)
 
 [Download Watchy STEP Model](https://github.com/sqfmi/watchy-hardware/raw/main/3D/Watchy.step)
 
@@ -15,3 +14,4 @@ slug: /3D
 
 [Download Watchy with Battery STL Model](https://github.com/sqfmi/watchy-hardware/raw/main/3D/Watchy_Battery.stl)
 
+fkfkfkfk
