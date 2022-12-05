@@ -5,89 +5,193 @@ sidebar_label: Create Your Own DSP
 slug: /create-DSP
 ---
 
-The Watchy library makes it easy to create your own custom watch face, we've provided a few examples that all use the same template.
+PurePath Console 3 is a powerful tool provided by Texas Instruments that allows users to create their own digital signal processing (DSP) applications. This intuitive software allows users to design and implement complex DSP algorithms, giving them full control over the processing of digital signals.
+
+With PurePath Console 3, users can create custom filters, gain control blocks, and delay elements to shape and manipulate the signal in any way they desire. The software also features a real-time simulation mode, allowing users to test their designs and make adjustments on the fly.However, it does not have the ability to export settings directly to the C++ programming language.
+
+To use the settings from PurePath Console 3 in a C++ program, you will need to write the program yourself using the C++ programming language and appropriate libraries. You can use the settings and algorithms from PurePath Console 3 as a reference when writing your C++ program, but you will need to manually implement the algorithm using the C++ language.
+
+Once your C++ program is written, you can use a C++ compiler to compile it and then run the resulting program on your computer. This program will be able to use the settings from PurePath Console 3 to process digital signals in real-time. Keep in mind that the C++ language is a general-purpose programming language, so you may need to use additional libraries or specialized tools to effectively implement your DSP algorithm in C++.
+
+TAS5825M has more flexible process flows and SmartAmp speaker protection technology, the TAS5825P has the Hybrid Pro algorithm for battery life extension.
+
+#### Sources:
+
+[PurePath™ Console 3 User Manual](https://www.osaelectronics.com/get/software/ti/ppc3/slou408%20%5BPPC3%20User%20Manual%5D.pdf)
+
+[TAS5825M Process Flows](https://www.ti.com/lit/an/slaa786a/slaa786a.pdf?ts=1670227369436&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTAS5825M)
+
+[How to Generate a Header File](https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/6/5314.How-to-Generate-a-Header-File-fro-TAS5805M-in-PPC3.pdf)
+
+[Setting File](https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/6/Setting-File.pdf)
+
+
 
 ## Basics
 
-To create a basic watch face, you need to simply override the ```drawWatchFace()``` method with your custom code, for example:
+To create a Header file .h, for example:
 
-```cpp title="myFirstWatchFace.ino"
-#include <Watchy.h> //include the Watchy library
-#include <Fonts/FreeMonoOblique24pt7b.h> //include any fonts you want to use
-#include "settings.h" //same file as the one from 7_SEG example
+```cpp title="Header.h"
+void Amplifier::init(unsigned int digital_volume, unsigned int analog_gain, unsigned int Select_Fsw, unsigned int I2S_Format)  {
+  Wire.begin();
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x03, 0x02);
+  writeReg8(TAS5825M_ADDRESS, 0x01, 0x11);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
 
-class MyFirstWatchFace : public Watchy{ //inherit and extend Watchy class
-    public:
-        MyFirstWatchFace(const watchySettings& s) : Watchy(s) {}
-        void drawWatchFace(){ //override this method to customize how the watch face looks
-          display.setFont(&FreeMonoOblique24pt7b);
-          display.setCursor(25, 110);
-          if(currentTime.Hour < 10){ //use the currentTime struct to print latest time
-            display.print("0");
-          }
-          display.print(currentTime.Hour);
-          display.print(":");
-          if(currentTime.Minute < 10){
-            display.print("0");
-          }  
-          display.println(currentTime.Minute);   
-        }
-};
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7d, 0x11);
+  writeReg8(TAS5825M_ADDRESS, 0x7e, 0xff);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x01);
+  writeReg8(TAS5825M_ADDRESS, 0x51, 0x05);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x02);
+  writeReg8(TAS5825M_ADDRESS, 0x19, 0xa0);
+  writeReg8(TAS5825M_ADDRESS, 0x1d, 0x01);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x46, 0x01);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x02, 0x40);// DEVICE_CTRL_1
+  writeReg8(TAS5825M_ADDRESS, 0x53, 0x60);
+  writeReg8(TAS5825M_ADDRESS, 0x54, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x03, 0x02);
 
-MyFirstWatchFace m(settings); //instantiate your watchface
+        delay(5);
 
-void setup() {
-  m.init(); //call init in setup
-}
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x8c);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x06);
+  writeReg8(TAS5825M_ADDRESS, 0x38, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x39, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x3a, 0x04);
+  writeReg8(TAS5825M_ADDRESS, 0x3b, 0x00);
 
-void loop() {
-  // this should never run, Watchy deep sleeps after init();
-}
-```
+//Tuning coeffs
 
-### Displaying Images/Icons
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x0b);
+  writeReg8(TAS5825M_ADDRESS, 0x50, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x51, 0x20);
+  writeReg8(TAS5825M_ADDRESS, 0x52, 0xc4);
+  writeReg8(TAS5825M_ADDRESS, 0x53, 0x9c);
+  writeReg8(TAS5825M_ADDRESS, 0x5c, 0x7f);
+  writeReg8(TAS5825M_ADDRESS, 0x5d, 0xff);
+  writeReg8(TAS5825M_ADDRESS, 0x5e, 0xff);
+  writeReg8(TAS5825M_ADDRESS, 0x5f, 0xff);
 
-Since the E-Paper display is black and white only, you will need to convert any images/icons you wish to display into black and white first.
-The image then needs to be converted into a byte array, and stored in Watchy's flash.
+// Book 0x8c
 
-#### Convert image to byte array (image2cpp)
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x8c);
 
-You can convert your images to byte arrays using the web tool <ins>[**image2cpp**](http://javl.github.io/image2cpp/)</ins>
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x01);
+  writeReg8(TAS5825M_ADDRESS, 0x28, 0x40);
+  writeReg8(TAS5825M_ADDRESS, 0x29, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x2a, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x2b, 0x00);
 
-1. Upload your image and play around with the settings. If your image is already in black and white then you can just leave the brightness threshold  to default, otherwise if it's in color, you can play with that setting to get the image to look right under preview.
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x0a);
+  writeReg8(TAS5825M_ADDRESS, 0x64, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x65, 0x80);
+  writeReg8(TAS5825M_ADDRESS, 0x66, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x67, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x68, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x69, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x6a, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x6b, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x6c, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x6d, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x6e, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x6f, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x70, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x71, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x72, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x73, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x74, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x75, 0x80);
+  writeReg8(TAS5825M_ADDRESS, 0x76, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x77, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x78, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x79, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7a, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7b, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7c, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7d, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7e, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x00);
 
-2. In the **Code Output format** option, select *Arduino code*, give it a name under *identifier* and click **Generate code**. Copy the contents in the textarea and paste it in a ```*.h``` file in the same directory as your Arduino sketch.
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x0b);
+  writeReg8(TAS5825M_ADDRESS, 0x08, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x09, 0x80);
+  writeReg8(TAS5825M_ADDRESS, 0x0a, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x0b, 0x00);
 
-3. In your watch face file e.g. ```myFirstWatchFace.ino```, include that header file e.g. ```#include "myImage.h"```
+  writeReg8(TAS5825M_ADDRESS, 0x38, 0x02);
+  writeReg8(TAS5825M_ADDRESS, 0x39, 0xa3);
+  writeReg8(TAS5825M_ADDRESS, 0x3a, 0x9a);
+  writeReg8(TAS5825M_ADDRESS, 0x3b, 0xcc);
+  writeReg8(TAS5825M_ADDRESS, 0x3c, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x3d, 0x06);
+  writeReg8(TAS5825M_ADDRESS, 0x3e, 0xd3);
+  writeReg8(TAS5825M_ADDRESS, 0x3f, 0x72);
 
-4. Use ```display.drawBitmap(x_origin, y_origin, imageByteArrayName, width, height, color)``` in the ```drawWatchFace()``` method to display your image. The order of these draw/print statements matter, so if you call ```display.drawBitmap()``` first, followed by ```display.println("Hello World!")```, the text will be on top of the image.
+  writeReg8(TAS5825M_ADDRESS, 0x48, 0x04);
+  writeReg8(TAS5825M_ADDRESS, 0x49, 0xc1);
+  writeReg8(TAS5825M_ADDRESS, 0x4a, 0xff);
+  writeReg8(TAS5825M_ADDRESS, 0x4b, 0x93);
+  writeReg8(TAS5825M_ADDRESS, 0x4c, 0x01);
+  writeReg8(TAS5825M_ADDRESS, 0x4d, 0x12);
+  writeReg8(TAS5825M_ADDRESS, 0x4e, 0x6e);
+  writeReg8(TAS5825M_ADDRESS, 0x4f, 0x98);
 
-### Using Fonts
+  writeReg8(TAS5825M_ADDRESS, 0x54, 0x7b);
+  writeReg8(TAS5825M_ADDRESS, 0x55, 0x3e);
+  writeReg8(TAS5825M_ADDRESS, 0x56, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x57, 0x6d);
+  writeReg8(TAS5825M_ADDRESS, 0x58, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x59, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x5a, 0xae);
+  writeReg8(TAS5825M_ADDRESS, 0x5b, 0xc3);
 
-You can use custom fonts by converting them first with the tool <ins>[**truetype2gfx**](https://rop.nl/truetype2gfx/)</ins>
+  writeReg8(TAS5825M_ADDRESS, 0x60, 0x08);
+  writeReg8(TAS5825M_ADDRESS, 0x61, 0x13);
+  writeReg8(TAS5825M_ADDRESS, 0x62, 0x85);
+  writeReg8(TAS5825M_ADDRESS, 0x63, 0x62);
+  writeReg8(TAS5825M_ADDRESS, 0x64, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x65, 0x80);
+  writeReg8(TAS5825M_ADDRESS, 0x66, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x67, 0x00);
 
-1. Upload your font of choice and set the font size. Click **Get GFX font file** to download the font file e.g. ```Seven_Segment10pt7b.h```.
+  writeReg8(TAS5825M_ADDRESS, 0x6c, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x6d, 0x78);
+  writeReg8(TAS5825M_ADDRESS, 0x6e, 0xd6);
+  writeReg8(TAS5825M_ADDRESS, 0x6f, 0xfd);
+  writeReg8(TAS5825M_ADDRESS, 0x70, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x71, 0x08);
+  writeReg8(TAS5825M_ADDRESS, 0x72, 0x13);
+  writeReg8(TAS5825M_ADDRESS, 0x73, 0x85);
 
-2. In your watch face file e.g. ```myFirstWatchFace.ino```, include that header file e.g. ```#include "Seven_Segment10pt7b.h"```
+//Register Tuning
 
-3. Use ```display.setFont(&Seven_Segment10pt7b)``` to set the current font face (don't forget the ampersand before the font name). You will have to call the ```display.setFont()``` method each time you wish to use another font. Use ```display.setCursor(x, y)``` to set where to start printing text, the coordinates refer to the *lower left corner* of the text to be printed.
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x30, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x60, 0x02);
+  writeReg8(TAS5825M_ADDRESS, 0x62, 0x09);
+  writeReg8(TAS5825M_ADDRESS, 0x4c, 0x30);
+  writeReg8(TAS5825M_ADDRESS, 0x03, 0x03);
+  writeReg8(TAS5825M_ADDRESS, 0x00, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x7f, 0x00);
+  writeReg8(TAS5825M_ADDRESS, 0x78, 0x80);
 
-### Share Your Watch Face!
-
-We'd love to see what you've created! Share your watch face with us and we'll post it on our gallery:
-
-1. Make sure you have a GitHub repo with the source code, and a 200x200 screenshot of the watch face (must be a black and white \*.bmp or \*.gif)
-2. Add your watch face to the bottom of this [`json file`](https://github.com/sqfmi/watchy-docs/blob/main/src/pages/watchfaces/watchfaces.json) like so:
-```json
-    {
-        "id" : "ID_NUMBER",
-        "name" : "WATCH_FACE_NAME",
-        "author" : "AUTHOR",
-        "screenshot" : "SCREENSHOT_URL",
-        "source" : "GITHUB_URL",
-        "ota_bin" : false,
-        "version" : "VERSION_NUMBER"
-    }  
-```
-3. You may want to check for other PRs so your ID number is the latest
-4. Submit the PR for review and merge
+  }
