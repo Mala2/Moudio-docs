@@ -12,7 +12,7 @@ const features = [
     imageUrl: 'img/touch1.gif',
     description: (
       <>
-Trackpads with Gesture Recognition to adjust the Volume & Track      </>
+The trackpad with gesture recognition allows users to easily adjust the volume and track of their audio with just a few simple gestures. Simply swipe up or down on the trackpad to increase or decrease the volume, and swipe left or right to move to the previous or next track.      </>
     ),
   },
 
@@ -23,16 +23,16 @@ Trackpads with Gesture Recognition to adjust the Volume & Track      </>
       <>
 DSP has flexible process flows which support Multi-Band DRC, Post AGL,FIR filter, 2*15 BQs,
 Spatializer (stereo widening),Dynamic Biquad, Smart Speaker Excursion control, Smart Thermal and Smart
-Bass Control for different applications      </>
+Bass Control for different applications.      </>
     ),
   },
 
   {
-    title: 'Powered by ATmega328 Platformio',
+    title: 'Powered by ATmega328 / ESP32',
     imageUrl: 'img/ATmega328.png',
     description: (
       <>
-        ATmega328P microcontroller at its core, and compatibility with Arduino, Platformio
+        ATmega328P or ESP32 microcontroller at its core, and compatibility with Arduino, Platformio.
       </>
     ),
   },  
@@ -54,7 +54,7 @@ drives two tweeters and one device drives two woofers, and can output at full ch
     imageUrl: 'img/bluetooth2.jpg',
     description: (
       <>
-The FSC-BT806 Feasycom features Qualcomm® CSR8675 - Bluetooth V5.0 Support HSP, HFP, A2DP, AVRCP, PBAP,MAP,SPP,BLE profile - Coverage up to 15m - 2 microphone inputs - Audio interfaces: I²S/PCM and SPDIF
+The FSC-BT806 Feasycom features Qualcomm® CSR8675 - Bluetooth V5.0 Support HSP, HFP, A2DP, AVRCP, PBAP,MAP,SPP,BLE profile - Coverage up to 15m - 2 microphone inputs - Audio interfaces: I²S/PCM and SPDIF.
 
     </>
     ),

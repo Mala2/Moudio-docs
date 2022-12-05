@@ -13,7 +13,7 @@ It contain MAX77961 3S Charger, MAX17320 Fuel Gauge, MAX25231ATCA 5V Buck, MAX77
 
 
 ## The BOTTOM Amplifier PCB
-It contain the Amplifier - 2x Texas Instruments® TAS5825M and The FSC-BT806 Feasycom Bluetooth Moduel.
+It contain the Amplifier - 2x Texas Instruments® TAS5825M and The FSC-BT806 Feasycom Bluetooth Module.
 ![BOTTOM Amplifier Schematic](../static/img/BOTTOM_Amplifier.svg)
 [v1.0](https://github.com/Mala2/Moudio/blob/main/Hardware/BOTTOM/BOTTOM_Amplifier.pdf)
 
