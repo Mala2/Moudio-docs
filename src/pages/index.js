@@ -92,7 +92,7 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`${siteConfig.title} by SQFMI`}
+      title={`${siteConfig.title} by MouDio`}
       description="MouDio by Mo">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">

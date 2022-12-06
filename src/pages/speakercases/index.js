@@ -5,20 +5,18 @@ import WatchCaseSTL from './WatchCaseSTL';
 
 function Hello() {
   return (
-    <Layout title="Watch Cases">
+    <Layout title="Speaker Cases">
       <div className="row">
-        <div className="col col--3"></div>
-        <div className="col col--6">
+        <div className="col col--4"></div>
+        <div className="col col--7">
           <div className="row">
-            <WatchCaseSTL path="Yatari/Yatari_Model.stl" title="Yatari" />
-            <WatchCaseSTL path="Armadillonium/Armadillonium_Model.stl" title="Armadillonium" />
-            <WatchCaseSTL path="dos/dos_assembled.stl" title="dos" />
-            <WatchCaseSTL path="duplo/duplo.stl" title="duplo" />
-            <WatchCaseSTL path="snappy/snappy.stl" title="snappy" />
-            <WatchCaseSTL path="quattro/quattro.stl" title="quattro" />
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <WatchCaseSTL path="3D-Files/Main-Enclosure.stl" title="Original" />
+              <p>This is a description of the watch case shown above.</p>
+            </div>
           </div>       
         </div>
-        <div className="col col--3"></div>
+        <div className="col col--4"></div>
       </div>
     </Layout>
   );

@@ -3,7 +3,7 @@
         "id" : "1",
         "name" : "Basic",
         "author" : "SQFMI",
-        "screenshot" : "/img/watchfaces/1_Basic.png",
+        "screenshot" : "/img/watchfaces/G1.png",
         "source" : "https://github.com/sqfmi/Watchy/tree/master/examples/WatchFaces/Basic",
         "ota_bin" : true,
         "version" : "1.0.0"
