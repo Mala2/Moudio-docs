@@ -4,7 +4,7 @@ import WatchFaceList from './WatchFaceList';
 
 function Hello() {
   return (
-    <Layout title="Watch Faces">
+    <Layout title="MouDio Grills">
       <div className="row row--no-gutters">
         <div className="col col--3"></div>
         <WatchFaceList />

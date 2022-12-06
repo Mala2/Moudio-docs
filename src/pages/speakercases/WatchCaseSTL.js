@@ -5,10 +5,10 @@ class WatchCaseSTL extends Component {
 
     render(){
         return(
-        <div className={'col col--6 '+watchcase.case}>
+        <div className={'col col--12 '+watchcase.case}>
             <h1>{this.props.title}</h1>
-            <iframe height='420' width='420' frameBorder='0' src={'https://viewscreen.githubusercontent.com/view/solid?url=https://raw.githubusercontent.com/sqfmi/watchy-cases/master/'+this.props.path} title={this.props.title}></iframe>
-            <a className={'button button--outline button--info'} href={'https://github.com/sqfmi/watchy-cases/tree/main/' + this.props.title} target="_blank">GitHub</a>
+            <iframe height='420' width='420' frameBorder='0' src={'https://viewscreen.githubusercontent.com/view/solid?url=https://raw.githubusercontent.com/mala2/Moudio/master/'+this.props.path} title={this.props.title}></iframe>
+            <a className={'button button--outline button--info'} href={'https://github.com/mala2/Moudio/raw/main/' + this.props.title} target="_blank">GitHub</a>
         </div>
         )
     }

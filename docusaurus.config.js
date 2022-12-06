@@ -20,11 +20,11 @@ module.exports = {
       title: "MouDio",
       logo: {
         alt: "Moudio by Mo",
-        src: 'img/sqfmi_logo_32x32.svg',
+        src: 'img/MD.png',
       },
       items: [
         {
-          to: "docs/getting-started",
+          to: "docs/Overview",
           activeBasePath: "docs",
           label: "Docs",
           position: "left",
@@ -32,7 +32,7 @@ module.exports = {
         {
           to: "speakerfaces",
           activeBasePath: "speakerfaces",
-          label: "Speaker Faces",
+          label: "Speaker Grills",
           position: "left",
         },
         {

@@ -9,6 +9,8 @@ The battery life would be 150 minutes, or 2.5 hours. This is assuming that the b
 
 If the consumption is 20W, then the battery life would be 7500mA / 20W = 375 minutes, or about 6.25 hours. It's worth noting that this calculation assumes 100% efficiency, which is rarely the case in real-world situations. In reality, the battery life would likely be shorter than this. Additionally, other factors such as the battery's age, temperature, and discharge rate can also affect its capacity and therefore its actual runtime.
 
+## 3V3 Rail
+![3V3 Rail](../static/img/3V3-Rail.svg)
 
 
 ## Tips
