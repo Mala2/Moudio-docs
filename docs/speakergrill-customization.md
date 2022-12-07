@@ -1,14 +1,6 @@
-# Customize Your Speaker Grill
+# Customize Your Speaker Grill (Coming SOON!)
 
 Use the options below to customize your speaker grill.
-
-## Choose a speaker grill
-
-To choose a speaker grill, select one of the following options:
-
-- Round Grill
-- Square Grill
-- Rectangular Grill
 
 ## Customize your grill
 
@@ -16,13 +8,9 @@ Once you have selected a speaker grill, you can customize it by selecting the nu
 
 To customize your grill, use the options below:
 
-1. Select the number of circles on your grill:
+1. Select the number of shapes on your grill:
 
 - Slide the slider from left to right to increase or decrease the number of circles on your grill.
-
-2. Select the number of pentagons on your grill:
-
-- Slide the slider from left to right to increase or decrease the number of pentagons on your grill.
 
 ...
 
