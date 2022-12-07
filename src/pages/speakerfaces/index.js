@@ -1,20 +1,107 @@
 import React from 'react';
+import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import WatchFaceList from './WatchFaceList';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import styles from './styles.module.css';
 
-function Hello() {
+const features = [
+  {
+    title: 'Grill Pattern 1',
+    imageUrl: 'img/grill-pattern-1.jpg',
+    description: (
+      <>
+        This grill pattern features a bold, geometric design that adds visual interest to your grill.
+      </>
+    ),
+  },
+  {
+    title: 'Grill Pattern 2',
+    imageUrl: 'img/grill-pattern-2.jpg',
+    description: (
+      <>
+        This grill pattern features a sleek, modern design that is perfect for any outdoor space.
+      </>
+    ),
+  },
+  {
+    title: 'Grill Pattern 3',
+    imageUrl: 'img/grill-pattern-3.jpg',
+    description: (
+      <>
+        This grill pattern features a classic, traditional design that adds a touch of elegance to your grill.
+      </>
+    ),
+  },
+  {
+    title: 'Grill Pattern 4',
+    imageUrl: 'img/grill-pattern-4.jpg',
+    description: (
+      <>
+        This grill pattern features a bold, industrial design that is perfect for a contemporary outdoor space.
+      </>
+    ),
+  },
+];
+
+
+
+ 
+function Feature({imageUrl, title, description}) {
+  const imgUrl = useBaseUrl(imageUrl);
   return (
-    <Layout title="MouDio Grills">
-      <div className="row row--no-gutters">
-        <div className="col col--3"></div>
-        <WatchFaceList />
-        <div className="col col--3">
-          <p>Can't find the right watch face?</p>
-          <a className="button button--lg button--secondary" href="/docs/create-watchface">Create Your Own!</a>
+    <div className={clsx('col col--10 text--center', styles.feature)}>
+      {imgUrl && (
+        <div className="text--center">
+          <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
-      </div>
+      )}
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  );
+}
+
+
+function Home() {
+  const context = useDocusaurusContext();
+  const {siteConfig = {}} = context;
+  return (
+    <Layout
+      title={`${siteConfig.title} by MouDio`}
+      description="MouDio by Mo">
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <h1 className="hero__title">{siteConfig.title}</h1>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={styles.buttons}>
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('docs/getting-started')}>
+              Create Your Own!
+            </Link>
+          </div>
+        </div>
+      </header>
+      <main>
+        {features && features.length > 0 && (
+          <section className={styles.features}>
+            <div className="container">
+              <div className="row text--center">
+                {features.map((props, idx) => (
+                  <Feature key={idx} {...props} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+      </main>
     </Layout>
   );
 }
 
-export default Hello;
+export default Home;
