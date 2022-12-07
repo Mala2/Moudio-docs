@@ -73,25 +73,24 @@ function Feature({ imageUrl, title, description }) {
 }
 
 
-
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`${siteConfig.title} by MouDio`}
+      title="Grills"
       description="MouDio by Mo">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 className="hero__title">{Home.title}</h1>
+          <p className="hero__subtitle">{Home.tagline}</p>
           <div className={styles.buttons}>
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/getting-started')}>
+              to={useBaseUrl('docs/speakergrill-customization')}>
               Create Your Own!
             </Link>
           </div>
@@ -115,3 +114,4 @@ function Home() {
 }
 
 export default Home;
+

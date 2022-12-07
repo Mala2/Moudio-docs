@@ -41,12 +41,12 @@ module.exports = {
           label: "Speaker Cases",
           position: "left",
         },
-        {
-          to: "gallery",
-          activeBasePath: "gallery",
-          label: "Gallery",
-          position: "left",
-        },
+//        {
+  //        to: "gallery",
+    //      activeBasePath: "gallery",
+      //    label: "Gallery",
+       //   position: "left",
+       // },
         // {
         //   to: 'contest',
         //   activeBasePath: 'contest',
