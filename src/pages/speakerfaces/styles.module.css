@@ -1,0 +1,65 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+ .heroBanner {
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url("/img/Moudio_Frontpage.png");
+    background-size: 590px;
+    background-position: 35% 0px;
+    background-repeat: no-repeat;
+    background-color: #ffd700; /*//ffd700*/
+    height: 400px;
+  }
+  
+  .heroBanner h1,
+  .heroBanner p,
+  .heroBanner a {
+    margin-left: 45%;
+    color: #000000 !important;
+  }
+  
+  @media screen and (max-width: 966px) {
+    .heroBanner {
+      padding: 2rem;
+      padding-top: 70%;
+      background-size: 400px;
+      background-position: 15% 5%;
+    }
+  
+    .heroBanner h1,
+    .heroBanner p,
+    .heroBanner a {
+      margin-left: 0%;
+      color: #d7e2d3 !important;
+    }
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .features {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .featureImage {
+    height: 180px;
+    width: 180px;
+  }
+  .row {
+    margin: 0 auto;
+  }
+  

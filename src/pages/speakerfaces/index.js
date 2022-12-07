@@ -1,78 +1,107 @@
-import React, { useState } from 'react';
-import SpeakergrillList from './SpeakergrillList';
-import { Svg } from 'react-native-svg';
+import React from 'react';
+import clsx from 'clsx';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import styles from './styles.module.css';
 
-function SpeakergrillPage() {
-  const [selectedGrill, setSelectedGrill] = useState(null);
-  const [customizations, setCustomizations] = useState([]);
+const features = [
+  {
+    title: 'Grill Pattern 1',
+    imageUrl: 'img/grill-pattern-1.jpg',
+    description: (
+      <>
+        This grill pattern features a bold, geometric design that adds visual interest to your grill.
+      </>
+    ),
+  },
+  {
+    title: 'Grill Pattern 2',
+    imageUrl: 'img/grill-pattern-2.jpg',
+    description: (
+      <>
+        This grill pattern features a sleek, modern design that is perfect for any outdoor space.
+      </>
+    ),
+  },
+  {
+    title: 'Grill Pattern 3',
+    imageUrl: 'img/grill-pattern-3.jpg',
+    description: (
+      <>
+        This grill pattern features a classic, traditional design that adds a touch of elegance to your grill.
+      </>
+    ),
+  },
+  {
+    title: 'Grill Pattern 4',
+    imageUrl: 'img/grill-pattern-4.jpg',
+    description: (
+      <>
+        This grill pattern features a bold, industrial design that is perfect for a contemporary outdoor space.
+      </>
+    ),
+  },
+];
 
-  const previewSvg = (
-    <Svg width="300" height="300">
-      {selectedGrill &&
-        selectedGrill.customizations.map(customization => (
-          <Circle
-            cx={customization.x}
-            cy={customization.y}
-            r={customization.r}
-            fill={customization.color}
-            key={customization.id}
-          />
-        ))}
-    </Svg>
-  );
 
+
+ 
+function Feature({imageUrl, title, description}) {
+  const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div>
-      <h1>Customize Your Speaker Grill</h1>
-      <p>Choose a speaker grill from the list below:</p>
-      <SpeakergrillList
-        selectedGrill={selectedGrill}
-        setSelectedGrill={setSelectedGrill}
-      />
-      {selectedGrill && (
-        <div>
-          <h2>Customize Your Grill</h2>
-          <p>
-            You have selected the {selectedGrill.name} grill. Use the options
-            below to customize your grill.
-          </p>
-          {selectedGrill.customizations.map(customization => (
-            <div key={customization.id}>
-              <h3>{customization.shape}</h3>
-              <p>
-                Select the number of {customization.shape}s on your grill:
-              </p>
-              <input
-                type="range"
-                min="1"
-                max="10"
-                value={customization.quantity}
-                onChange={event => {
-                  const updatedCustomizations = customizations.map(c => {
-                    if (c.id === customization.id) {
-                      return {
-                        ...c,
-                        quantity: parseInt(event.target.value, 10)
-                      };
-                    }
-                    return c;
-                  });
-                  setCustomizations(updatedCustomizations);
-                }}
-              />
-              <p>{customization.quantity}</p>
-            </div>
-          ))}
-          <h2>Preview</h2>
-          <p>
-            The preview below shows what your speaker grill will look like with
-            the current customizations applied.
-          </p>
-          {previewSvg}
+    <div className={clsx('col col--10 text--center', styles.feature)}>
+      {imgUrl && (
+        <div className="text--center">
+          <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   );
 }
 
-export default SpeakergrillPage;
+
+function Home() {
+  const context = useDocusaurusContext();
+  const {siteConfig = {}} = context;
+  return (
+    <Layout
+      title={`${siteConfig.title} by MouDio`}
+      description="MouDio by Mo">
+      <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <h1 className="hero__title">{siteConfig.title}</h1>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={styles.buttons}>
+            <Link
+              className={clsx(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('docs/getting-started')}>
+              Create Your Own!
+            </Link>
+          </div>
+        </div>
+      </header>
+      <main>
+        {features && features.length > 0 && (
+          <section className={styles.features}>
+            <div className="container">
+              <div className="row text--center">
+                {features.map((props, idx) => (
+                  <Feature key={idx} {...props} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+      </main>
+    </Layout>
+  );
+}
+
+export default Home;
