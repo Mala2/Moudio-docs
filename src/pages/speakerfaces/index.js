@@ -9,37 +9,46 @@ import styles from './styles.module.css';
 const features = [
   {
     title: 'Grill Pattern 1',
-    imageUrl: 'img/grill-pattern-1.jpg',
+    imageUrl: 'img/grill-pattern-1.png',
     description: (
       <>
-        This grill pattern features a bold, geometric design that adds visual interest to your grill.
+<Link to="https://github.com/Mala2/MouDio/tree/main/3D-Files/Grill/1" className={styles.customLink}>
+Download
+</Link>
       </>
     ),
   },
+  
   {
     title: 'Grill Pattern 2',
-    imageUrl: 'img/grill-pattern-2.jpg',
+    imageUrl: 'img/grill-pattern-2.png',
     description: (
       <>
-        This grill pattern features a sleek, modern design that is perfect for any outdoor space.
+      <Link to="https://github.com/Mala2/MouDio/tree/main/3D-Files/Grill/2" className={styles.customLink}>
+      Download
+</Link>
       </>
     ),
   },
   {
     title: 'Grill Pattern 3',
-    imageUrl: 'img/grill-pattern-3.jpg',
+    imageUrl: 'img/grill-pattern-3.png',
     description: (
       <>
-        This grill pattern features a classic, traditional design that adds a touch of elegance to your grill.
+      <Link to="https://github.com/Mala2/MouDio/tree/main/3D-Files/Grill/3" className={styles.customLink}>
+      Download
+</Link>
       </>
     ),
   },
   {
     title: 'Grill Pattern 4',
-    imageUrl: 'img/grill-pattern-4.jpg',
+    imageUrl: 'img/grill-pattern-4.png',
     description: (
       <>
-        This grill pattern features a bold, industrial design that is perfect for a contemporary outdoor space.
+      <Link to="https://github.com/Mala2/MouDio/tree/main/3D-Files/Grill/4" className={styles.customLink}>
+      Download
+</Link>
       </>
     ),
   },
@@ -48,7 +57,7 @@ const features = [
 
 
  
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--10 text--center', styles.feature)}>
@@ -62,6 +71,7 @@ function Feature({imageUrl, title, description}) {
     </div>
   );
 }
+
 
 
 function Home() {
