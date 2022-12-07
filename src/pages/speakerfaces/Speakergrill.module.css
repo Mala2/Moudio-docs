@@ -1,0 +1,107 @@
+.grill {
+  display: inline-block;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.grillImage {
+  max-width: 200px;
+}
+
+.customizedGrill {
+  display: inline-block;
+  margin: 10px;
+}
+
+/* Add styles for the slot shape preview */
+.slotPreview {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+}
+
+/* Add styles for the slot shape */
+.slot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+/* Add styles for the customized grill shapes */
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.pentagon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+}
+
+.hexagon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+}
+
+.heptagon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+}
+
+.octagon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+}
+
+.nonagon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+}
+
+.decagon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+}
