@@ -73,7 +73,7 @@ module.exports = {
             },
             {
               label: 'Hardware',
-              to: 'docs/hardware',
+              to: 'docs/Schematics',
             },
             {
               label: "GitHub",
