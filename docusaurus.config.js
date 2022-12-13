@@ -4,8 +4,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 module.exports = {
   title: "MouDio",
   tagline: "Bluetooth Speaker",
-  url: "https://github.com",
-  baseUrl: "/Moudio-docs/",
+  url: "https://docusaurus-2.netlify.app",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -20,7 +20,7 @@ module.exports = {
       title: "MouDio",
       logo: {
         alt: "Moudio by Mo",
-        src: 'img/MD.png',
+        src: "img/MD.png",
       },
       items: [
         {
@@ -41,12 +41,12 @@ module.exports = {
           label: "Speaker Cases",
           position: "left",
         },
-//        {
-  //        to: "gallery",
-    //      activeBasePath: "gallery",
-      //    label: "Gallery",
-       //   position: "left",
-       // },
+        //        {
+        //        to: "gallery",
+        //      activeBasePath: "gallery",
+        //    label: "Gallery",
+        //   position: "left",
+        // },
         // {
         //   to: 'contest',
         //   activeBasePath: 'contest',
@@ -72,8 +72,8 @@ module.exports = {
               to: "docs/getting-started",
             },
             {
-              label: 'Hardware',
-              to: 'docs/hardware',
+              label: "Hardware",
+              to: "docs/hardware",
             },
             {
               label: "GitHub",
@@ -103,7 +103,6 @@ module.exports = {
             },
           ],
         },
-        
       ],
       copyright: `Copyright © ${new Date().getFullYear()} <a class="footer__link-item" href="https://github.com/Mala2"> Mohammad Alabdulaziz</a>. Built with Docusaurus.`,
     },
